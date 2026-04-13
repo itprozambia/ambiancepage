@@ -1,0 +1,160 @@
+/* ---------- Base Styles ---------- */
+body {
+  margin: 0;
+  font-family: "Segoe UI", Tahoma, sans-serif;
+  background: #f4f5f7;
+  color: #333;
+}
+
+header {
+  background-color: white;
+  color: #5571be;
+  text-align: center;
+  padding: 25px 15px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+}
+
+h1 {
+  margin: 0;
+  font-size: 1.9rem;
+  letter-spacing: 1px;
+}
+
+header p {
+  margin: 6px 0 0;
+  font-size: 0.95rem;
+  opacity: 0.9;
+}
+
+/* ---------- Gallery Grid ---------- */
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 20px;
+  padding: 25px;
+  max-width: 1200px;
+  margin: auto;
+}
+
+.item {
+  position: relative;
+  background: #fff;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+}
+
+.item:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+}
+
+.item img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  transition: transform 0.4s ease;
+}
+
+.item:hover img {
+  transform: scale(1.05);
+}
+
+.caption {
+  padding: 10px;
+  text-align: center;
+  font-size: 0.95rem;
+  color: #444;
+  background: #fafafa;
+  border-top: 1px solid #eee;
+}
+
+/* ---------- Modal ---------- */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 10;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(15,15,15,0.9);
+  align-items: center;
+  justify-content: center;
+  animation: fadeIn 0.3s ease;
+}
+
+@keyframes fadeIn {
+  from {opacity: 0;}
+  to {opacity: 1;}
+}
+
+.modal-inner {
+  text-align: center;
+}
+
+.modal-content {
+  max-width: 85%;
+  max-height: 75vh;
+  border-radius: 10px;
+  box-shadow: 0 0 25px rgba(255,255,255,0.3);
+  animation: zoom 0.4s ease;
+}
+
+@keyframes zoom {
+  from {transform: scale(0.7);}
+  to {transform: scale(1);}
+}
+
+.modal-caption {
+  color: #f2f2f2;
+  margin-top: 15px;
+  font-size: 1rem;
+  opacity: 0.9;
+}
+
+/* ---------- Navigation Buttons ---------- */
+.close {
+  position: absolute;
+  top: 25px;
+  right: 40px;
+  font-size: 45px;
+  color: #fff;
+  cursor: pointer;
+  transition: color 0.3s;
+}
+
+.close:hover {
+  color: #ccc;
+}
+
+.nav {
+  position: absolute;
+  top: 50%;
+  font-size: 45px;
+  color: #fff;
+  cursor: pointer;
+  user-select: none;
+  transform: translateY(-50%);
+  padding: 12px;
+  background: rgba(0,0,0,0.25);
+  border-radius: 50%;
+  transition: background 0.3s ease;
+}
+
+.nav:hover {
+  background: rgba(255,255,255,0.15);
+}
+
+.prev { left: 40px; }
+.next { right: 40px; }
+
+/* ---------- Responsive ---------- */
+@media (max-width: 600px) {
+  .item img { height: 160px; }
+  .close { font-size: 35px; right: 20px; }
+  .nav { font-size: 35px; }
+  .modal-caption { font-size: 0.9rem; padding: 0 10px; }
+}

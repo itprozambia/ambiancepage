@@ -1,0 +1,266 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ambiance of Life Church</title>
+
+  <style>
+    :root {
+      --primary: #0d1b2a;
+      --accent: #e63946;
+      --light: #f8f9fa;
+      --text: #333;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    }
+
+    body {
+      background: var(--light);
+      color: var(--text);
+      line-height: 1.6;
+    }
+
+    /* HEADER */
+    header {
+      background: var(--primary);
+      color: white;
+      padding: 15px 20px;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+
+    .nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      max-width: 1100px;
+      margin: auto;
+    }
+
+    .logo {
+      font-size: 1.3rem;
+      font-weight: bold;
+    }
+
+    .menu {
+      display: flex;
+      gap: 20px;
+    }
+
+    .menu a {
+      color: white;
+      text-decoration: none;
+      font-size: 0.9rem;
+      transition: 0.3s;
+    }
+
+    .menu a:hover {
+      color: var(--accent);
+    }
+
+    /* MOBILE MENU */
+    .menu-toggle {
+      display: none;
+      font-size: 1.5rem;
+      cursor: pointer;
+    }
+
+    @media(max-width: 768px) {
+      .menu {
+        position: absolute;
+        top: 60px;
+        left: 0;
+        width: 100%;
+        background: var(--primary);
+        flex-direction: column;
+        align-items: center;
+        display: none;
+      }
+
+      .menu.active {
+        display: flex;
+      }
+
+      .menu-toggle {
+        display: block;
+      }
+    }
+
+    /* HERO */
+    .hero {
+      background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)),
+        url('IMAGES/ALC1.png') center/cover no-repeat;
+      color: white;
+      text-align: center;
+      padding: 100px 20px;
+    }
+
+    .hero h1 {
+      font-size: 2.5rem;
+      margin-bottom: 10px;
+    }
+
+    .hero p {
+      max-width: 600px;
+      margin: auto;
+    }
+
+    /* CONTENT */
+    .container {
+      max-width: 1100px;
+      margin: auto;
+      padding: 40px 20px;
+    }
+
+    h2 {
+      margin-bottom: 15px;
+      color: var(--primary);
+    }
+
+    .section {
+      margin-bottom: 40px;
+    }
+
+    .highlight {
+      font-weight: bold;
+      color: var(--accent);
+    }
+
+    /* GRID */
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+    }
+
+    .card {
+      background: white;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+    }
+
+    /* IMAGE */
+    img {
+      width: 100%;
+      border-radius: 10px;
+      margin-top: 15px;
+    }
+
+    /* FOOTER */
+    footer {
+      background: var(--primary);
+      color: white;
+      text-align: center;
+      padding: 20px;
+      margin-top: 40px;
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- HEADER -->
+  <header>
+    <div class="nav">
+      <div class="logo">Ambiance of Life Church</div>
+      <div class="menu-toggle" onclick="toggleMenu()">☰</div>
+
+      <nav class="menu" id="menu">
+        <a href="#about">About</a>
+        <a href="#impact">Impact</a>
+        <a href="#">Programmes</a>
+        <a href="#">Sermons</a>
+        <a href="#">Music</a>
+        <a href="#">Contact</a>
+	<a href="gallery.html">Images</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- HERO -->
+  <section class="hero">
+    <h1>Welcome to Ambiance of Life Church</h1>
+    <p>Revealing and expressing the limitless possibilities of the Zoe life — the God-kind of life.</p>
+  </section>
+
+  <!-- ABOUT -->
+  <section class="container" id="about">
+    <div class="section">
+      <h2>About Us</h2>
+
+      <p>
+        Ambiance of Life Church (ALC) is a Christ-centered ministry founded through
+        Pastor Reuben Lubumba, with a passion to reveal and express the limitless
+        possibilities found within the Zoe life — the very life of God.
+      </p>
+
+      <p><span class="highlight">Vision:</span> To enable believers to experience and express the possibilities within the Zoe life.</p>
+
+      <p><span class="highlight">Mission:</span> To cultivate a Spirit-filled environment where the Word of God and the Holy Spirit bring transformation.</p>
+
+      <p><span class="highlight">Core Pursuit:</span> Reaching the lost and discipling believers into spiritual maturity.</p>
+    </div>
+
+    <!-- GRID SECTION -->
+    <div class="grid">
+      <div class="card">
+        <h3>Our Desire</h3>
+        <p>To raise a victorious end-time Church empowered to manifest heaven on earth.</p>
+      </div>
+
+      <div class="card">
+        <h3>Our Mandate</h3>
+        <p>To equip believers for spiritual and physical excellence in every sphere of life.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- IMPACT -->
+  <section class="container" id="impact">
+    <h2>The Five Impact Points</h2>
+
+    <div class="grid">
+
+      <div class="card">
+        <h3>Preach the Gospel</h3>
+        <p>Addressing spiritual needs and revealing identity in Christ (John 10:10).</p>
+      </div>
+
+      <div class="card">
+        <h3>Meet Physical Needs</h3>
+        <p>Demonstrating God's love by meeting tangible needs (James 2:14–17).</p>
+      </div>
+
+      <div class="card">
+        <h3>Empower Minds</h3>
+        <p>Training believers to grow and transform (Romans 12:2).</p>
+      </div>
+
+    </div>
+
+    <img src="IMAGES/ALC1.png" alt="Church Image">
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <p>© 2026 Ambiance of Life Church — All Rights Reserved</p>
+    <p>Follow us on Facebook</p>
+  </footer>
+
+  <!-- SCRIPT -->
+  <script>
+    function toggleMenu() {
+      document.getElementById("menu").classList.toggle("active");
+    }
+  </script>
+
+</body>
+</html>
